@@ -1,4 +1,6 @@
-# Dockerfile
-FROM nginx:alpine
-USER 100 # Utilisateur non-root
-COPY html /usr/share/nginx/html
+FROM registry.access.redhat.com/ubi8/nginx-120
+
+# Copier le contenu du site
+COPY html/ /opt/app-root/src/
+
+# Pas besoin de définir USER, car cette image est déjà non-root et compatible OpenShift
