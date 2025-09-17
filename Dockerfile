@@ -1,6 +1,5 @@
+# Dockerfile
 FROM registry.access.redhat.com/ubi8/nginx-120
 
-# Copier le contenu du site
+# Copier les fichiers HTML dans le dossier attendu par nginx-120
 COPY html/ /opt/app-root/src/
-
-# Pas besoin de définir USER, car cette image est déjà non-root et compatible OpenShift
